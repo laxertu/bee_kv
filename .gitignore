@@ -1,0 +1,8 @@
+/test/application/model/.pytest_cache/
+.idea
+/test/.pytest_cache/
+/exarch.egg-info/
+/dist/
+/test/integration/.pytest_cache/
+/kv_data.egg-info/
+/.coverage
