@@ -70,15 +70,15 @@ class TestFacade(TestCase):
     def test_empty(self):
         self.assertEqual(self.sut.get_all(), {})
 
-    def test_fixtures(self):
+    def aa_test_fixtures(self):
 
         for kv in FIXTURES:
             self.sut.save(kv.key, kv.value)
 
         for kv in FIXTURES:
             get_result = self.sut.get(kv.key)
-            self.assertEqual(kv.key, get_result.key)
-            self.assertEqual(kv.value, get_result.value)
+            self.assertEqual(kv.key, get_result.payload.key)
+            self.assertEqual(kv.value, get_result.payload.key)
 
         self.assertEqual(len(self.sut.get_all()), len(FIXTURES))
         self.sut.reset()

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from bee_kv.public.driver.entities import KvDataOperationResponseDto, KvDataOperationRequestDto
+from bee_kv.public.driver.entities import KvDataOperationRequestDto, KvDataOperationResponseDto, KvDto
 
 
 @dataclass()
@@ -9,10 +9,10 @@ class KvDataItem:
     value: object = None
 
     @property
-    def dto(self) -> KvDataOperationResponseDto:
-        return KvDataOperationResponseDto(key=self.key, value=self.value)
+    def dto(self) -> KvDto:
+        return KvDto(key=self.key, value=self.value)
 
 
-def model_from_dto(dto: KvDataOperationRequestDto) -> KvDataItem:
+def model_from_dto(dto: KvDto) -> KvDataItem:
     return KvDataItem(key=dto.key, value=dto.value)
 
