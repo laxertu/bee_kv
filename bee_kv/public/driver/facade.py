@@ -27,21 +27,24 @@ class Facade:
         return handler.handle(request)
 
     def get_all(self) -> dict[str: KvDataOperationResponse]:
+        request: KvDataOperationRequest = get_request(ports.CMD_GET_ALL)
+        request.payload.context_id = self.context_id
+
         handler = get_cmd_handler(ports.CMD_GET_ALL)
-        dto: KvDataOperationRequest = get_request(ports.CMD_GET_ALL)
-        dto.context_id = self.context_id
-        return {c.key: c.payload for c in handler.handle(dto)}
+        return {c.key: c.payload for c in handler.handle(request)}
 
     def reset(self) -> None:
+        request: KvDataOperationRequest = get_request(ports.CMD_RESET)
+        request.payload.context_id = self.context_id
+
         handler = get_cmd_handler(ports.CMD_RESET)
-        dto: KvDataOperationRequest = get_request(ports.CMD_RESET)
-        dto.context_id = self.context_id
-        handler.handle(dto)
+        handler.handle(request)
 
     def remove(self, key: str) -> None:
+        request: KvDataOperationRequest = get_request(ports.CMD_REMOVE)
+        request.payload.context_id = self.context_id
+        request.payload.key = key
+
         handler = get_cmd_handler(ports.CMD_REMOVE)
-        dto: KvDataOperationRequest = get_request(ports.CMD_REMOVE)
-        dto.context_id = self.context_id
-        dto.key = key
-        handler.handle(dto)
+        handler.handle(request)
 
