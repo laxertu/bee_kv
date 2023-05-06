@@ -1,4 +1,3 @@
-from bee_core.public.driver.entities import PortRequest, PortResponse
 import bee_kv.public.driver.ports as ports
 from bee_kv.public.driver.entities import KvDataOperationResponse, KvDataOperationRequest
 from bee_kv.application.model.use_cases import KwDataUseCase
