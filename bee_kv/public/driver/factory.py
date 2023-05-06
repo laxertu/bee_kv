@@ -17,10 +17,5 @@ def get_request(cmd: str) -> e.KvDataOperationRequest:
     return e.KvDataOperationRequest(cmd=cmd, payload=e.KvDto())
 
 
-def get_handler() -> KvDataManagerPort:
-    from bee_kv.application.driver.implementations import DefaultImplementation
-    return DefaultImplementation()
-
-
-def get_cmd_handler(cmd: str) -> i.BaseHandler:
+def get_handler(cmd: str) -> i.BaseHandler:
     return handlers_map[cmd]
