@@ -31,7 +31,7 @@ class Facade:
         request.payload.context_id = self.context_id
 
         handler = get_handler(ports.CMD_GET_ALL)
-        return {c.key: c.payload for c in handler.handle(request)}
+        return {c.payload.key: c.payload for c in handler.handle(request)}
 
     def reset(self) -> None:
         request: KvDataOperationRequest = get_request(ports.CMD_RESET)
