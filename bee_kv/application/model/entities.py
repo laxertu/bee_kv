@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from bee_kv.public.driver.entities import KvDataOperationRequestDto, KvDataOperationResponseDto, KvDto
+from bee_kv.public.driver.entities import KvDto
 
 
 @dataclass()

@@ -11,17 +11,6 @@ class KvDto(Dto):
 
 
 @dataclass
-class KvDataOperationRequestDto(Dto):
-    cmd: str
-    dto: KvDto = None
-
-
-@dataclass
-class KvDataOperationResponseDto(Dto):
-    key: str = None
-
-
-@dataclass
 class KvDataOperationRequest(PortRequest):
     payload: KvDto
     context_id: str = DEFAULT_CONTEXT_ID

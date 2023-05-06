@@ -1,10 +1,9 @@
 import bee_kv.public.driver.entities as e
-from bee_kv.public.driver.ports import KvDataManagerPort
 
 import bee_kv.application.driver.implementations as i
 import bee_kv.public.driver.ports as p
 
-handlers_map: dict[str, i.BaseHandler] = {
+_handlers_map: dict[str, i.BaseHandler] = {
     p.CMD_SAVE: i.Save(),
     p.CMD_GET: i.Get(),
     p.CMD_REMOVE: i.Remove(),
@@ -18,4 +17,4 @@ def get_request(cmd: str) -> e.KvDataOperationRequest:
 
 
 def get_handler(cmd: str) -> i.BaseHandler:
-    return handlers_map[cmd]
+    return _handlers_map[cmd]

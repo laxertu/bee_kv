@@ -45,10 +45,8 @@ try:
     elif cmd == "get_all":
         for k, item in Facade().get_all().items():
             print(item.key, item.value)
-            #print(k, item.payload.value)
 
 
 except Exception as e:
-    print(traceback.format_exc())
     print(f"[ERROR] {e}")
 

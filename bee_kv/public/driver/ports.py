@@ -50,26 +50,3 @@ class ResetPort(Port):
     @abstractmethod
     def handle(self, request: KvDataOperationRequest) -> KvDataOperationResponse:
         pass
-
-
-class KvDataManagerPort(PortHandler):
-
-    @abstractmethod
-    def handle_save(self, request: KvDataOperationRequest) -> KvDataOperationResponse:
-        ...
-
-    @abstractmethod
-    def handle_get(self, request: KvDataOperationRequest) -> KvDataOperationResponse:
-        ...
-
-    @abstractmethod
-    def handle_get_all(self, request: KvDataOperationRequest) -> list[KvDataOperationResponse]:
-        ...
-
-    @abstractmethod
-    def handle_reset(self, request: KvDataOperationRequest) -> KvDataOperationResponse:
-        ...
-
-    @abstractmethod
-    def handle_remove(self, request: KvDataOperationRequest) -> KvDataOperationResponse:
-        ...
