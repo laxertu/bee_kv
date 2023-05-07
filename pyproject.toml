@@ -1,5 +1,5 @@
 [project]
-name = "exarch"
+name = "bee_kv"
 version = "1.0.0"
 description = "An exagonal architecture exercise"
 #authors = [
