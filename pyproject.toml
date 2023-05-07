@@ -2,16 +2,12 @@
 name = "bee_kv"
 version = "1.0.0"
 description = "An exagonal architecture exercise"
-#authors = [
-#    "Luca Stretti <laxertu@gmail.com>"
-#]
 authors = [
     {name = "Luca Stretti", email = "laxertu@gmail.com"}
 ]
 
 [build-system]
 requires = ["setuptools", "pytest", "wheel"]
-#build-backend = "setuptools"
-
-#[tool.setuptools]
-#py-modules = []
+dependencies = [
+  "git+https://github.com/laxertu/bee_core",
+]
