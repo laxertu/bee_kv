@@ -6,7 +6,7 @@ authors = [
     {name = "Luca Stretti", email = "laxertu@gmail.com"}
 ]
 dependencies = [
-  "git+https://github.com/laxertu/bee_core",
+  "bee_core @ git+https://github.com/laxertu/bee_core",
 ]
 
 
