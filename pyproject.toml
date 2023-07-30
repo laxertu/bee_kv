@@ -1,6 +1,6 @@
 [project]
 name = "bee_kv"
-version = "1.0.0"
+dynamic = ["version"]
 description = "An exagonal architecture exercise"
 authors = [
     {name = "Luca Stretti", email = "laxertu@gmail.com"}
@@ -9,6 +9,10 @@ dependencies = [
   "bee_core @ git+https://github.com/laxertu/bee_core",
 ]
 
-
 [build-system]
-requires = ["setuptools", "pytest", "wheel"]
+requires = ["setuptools>=42", "wheel", "setuptools-git-versioning"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools-git-versioning]
+enabled = true
+
