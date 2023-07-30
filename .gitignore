@@ -6,3 +6,5 @@
 /test/integration/.pytest_cache/
 /kv_data.egg-info/
 /.coverage
+/bee_kv.egg-info/
+*__pycache__*
